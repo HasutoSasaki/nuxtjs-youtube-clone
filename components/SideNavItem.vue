@@ -13,14 +13,14 @@
 <script setup>
 import { defineProps, toRefs } from 'vue';
 
-import Home from 'vue-material-design-icons/Home.vue'
-import FolderPlayOutline from 'vue-material-design-icons/FolderPlayOutline.vue';
-import ImageMultiple from 'vue-material-design-icons/ImageMultiple.vue';
-import ThumbUpOutline from 'vue-material-design-icons/ThumbUpOutline.vue';
-import History from 'vue-material-design-icons/History.vue';
-import ClockOutline from 'vue-material-design-icons/ClockOutline.vue';
-import VideoPlusOutlineIcon from 'vue-material-design-icons/VideoPlusOutline.vue';
-import DeleteIcon from 'vue-material-design-icons/Delete.vue';
+// import Home from 'vue-material-design-icons/Home.vue'
+// import FolderPlayOutline from 'vue-material-design-icons/FolderPlayOutline.vue';
+// import ImageMultiple from 'vue-material-design-icons/ImageMultiple.vue';
+// import ThumbUpOutline from 'vue-material-design-icons/ThumbUpOutline.vue';
+// import History from 'vue-material-design-icons/History.vue';
+// import ClockOutline from 'vue-material-design-icons/ClockOutline.vue';
+// import VideoPlusOutlineIcon from 'vue-material-design-icons/VideoPlusOutline.vue';
+// import DeleteIcon from 'vue-material-design-icons/Delete.vue';
 
 const props = defineProps({
     openSideNav: Boolean,
@@ -38,7 +38,7 @@ if (iconString.value === 'VideoCreated') iconName = 'ri:movie-line', tabTitle = 
 if (iconString.value === 'Liked') iconName = 'iconamoon:like', tabTitle = '高く評価した動画'
 if (iconString.value === 'History') iconName = 'lucide:history', tabTitle = '履歴'
 if (iconString.value === 'WatchLater') iconName = 'ic:outline-watch-later', tabTitle = '後で見る'
-if (iconString.value === 'Add Video') iconName = VideoPlusOutlineIcon
-if (iconString.value === 'Delete Video') iconName = DeleteIcon
+// if (iconString.value === 'Add Video') iconName = VideoPlusOutlineIcon
+// if (iconString.value === 'Delete Video') iconName = DeleteIcon
 
 </script>

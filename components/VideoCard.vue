@@ -31,7 +31,7 @@
 </template>
 <script setup>
 import { defineProps, toRefs, ref, watch, onMounted } from 'vue';
-import CheckCircle from 'vue-material-design-icons/CheckCircle.vue'
+
 
 const props = defineProps({
     title: String,
