@@ -1,3 +1,11 @@
+<script setup>
+import { ref } from 'vue'
+let inputValue = ref('')
+const handleInputValue = (newValue) => {
+    inputValue = newValue
+    console.log(inputValue)
+}
+</script>
 <template>
     <div>
         <Header @update:inputValue="handleInputValue" />
@@ -9,10 +17,3 @@
         </div>
     </div>
 </template>
-<script setup>
-import { ref } from 'vue'
-let inputValue = ref('')
-const handleInputValue = (newValue) => {
-    inputValue.value = newValue
-}
-</script>

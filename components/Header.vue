@@ -1,10 +1,14 @@
 <script setup>
-import { ref, getCurrentInstance } from 'vue'
+import { ref, defineEmits } from 'vue'
 
 const inputValue = ref('')
+const emit = defineEmits(['update:inputValue']);
 const emitInputValue = () => {
-    const { emit } = getCurrentInstance()
+
+}
+const emitSearchButtonClick = () => {
     emit('update:inputValue', inputValue.value)
+    console.log('emit発火')
 }
 </script>
 <template>
@@ -14,17 +18,19 @@ const emitInputValue = () => {
                 <Icon name="iconoir:menu" size="1.5rem" class="text-white" />
             </button>
             <div class="mx-2"></div>
-            <Link class="flex text-white items-center justify-center mr-10 cursor-pointer">
-            <img width="32" src="/images/YT-logo-text.png" alt="">
+            <!-- <Link class="flex text-white items-center justify-center mr-10 cursor-pointer"> -->
+            <img width="32" src="/images/YT-logo.png" alt="">
             <img width="62" src="/images/YT-logo-text.png" alt="">
-            </Link>
+            <!-- </Link> -->
         </div>
         <div class="w-[600px] md:block hidden">
             <div class="rounded-full flex items-center bg-[#222222]">
                 <input type="text" v-model="inputValue" @input="emitInputValue"
                     class="form-control block w-full px-5 py-1.5 text-base font-normal text-gray-200 bg-black placeholder-gray-400 bg-clip-padding border border-solid border-l-gray-700 border-gray-700 rounded-l-full transition ease-in-out m-0 border-transparent focus:ring-0"
                     placeholder="Search" name="" id="" />
-                <Icon name="octicon:search-24" size="1.5rem" class="text-white mx-6" />
+                <button @click="emitSearchButtonClick">
+                    <Icon name="octicon:search-24" size="1.5rem" class="text-white mx-6" />
+                </button>
                 <!-- <MagnifyIcon class="mx-6" fillColor="#FFFFFF" :size="23" /> -->
             </div>
         </div>
