@@ -1,6 +1,10 @@
 <script setup>
 
 const openSideNav = ref(true)
+
+const props = defineProps({
+    navtest: String
+})
 </script>
 
 <template>
@@ -17,6 +21,7 @@ const openSideNav = ref(true)
                     <SideNavItem :openSideNav="true" iconString="WatchLater" />
                     <SideNavItem :openSideNav="true" iconString="Liked" />
                     <div class="text-gray-400 text-[14px] text-extrabold">
+                        <p>{{ props.navtest }}</p>
                         About Press Copyright
                         <div>Contact us</div>
                         Creator Advertise Developers
