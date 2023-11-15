@@ -1,14 +1,20 @@
 <script setup>
 import { ref, defineEmits } from 'vue'
+import { useSearchInputStore } from '~/store/searchInput'
+
+const store = useSearchInputStore();
+const { value, setValue } = store;
 
 const inputValue = ref('')
-const emit = defineEmits(['update:inputValue']);
-const emitInputValue = () => {
-
-}
+// const emit = defineEmits(['update:inputValue']);
+// const emitInputValue = () => {
+//     inputValue = 
+// }
 const emitSearchButtonClick = () => {
-    emit('update:inputValue', inputValue.value)
-    console.log('emit発火')
+    // emit('update:inputValue', inputValue.value)
+    setValue(inputValue.value)
+    console.log('emit発火1' + inputValue.value)
+    console.log('emit発火' + value)
 }
 </script>
 <template>
@@ -25,7 +31,7 @@ const emitSearchButtonClick = () => {
         </div>
         <div class="w-[600px] md:block hidden">
             <div class="rounded-full flex items-center bg-[#222222]">
-                <input type="text" v-model="inputValue" @input="emitInputValue"
+                <input type="text" v-model="inputValue"
                     class="form-control block w-full px-5 py-1.5 text-base font-normal text-gray-200 bg-black placeholder-gray-400 bg-clip-padding border border-solid border-l-gray-700 border-gray-700 rounded-l-full transition ease-in-out m-0 border-transparent focus:ring-0"
                     placeholder="Search" name="" id="" />
                 <button @click="emitSearchButtonClick">
